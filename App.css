@@ -1,142 +1,111 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+// --- Styles ---
+const containerStyle = {
+  fontFamily: "Arial, sans-serif",
+  padding: "15px",
+  width: "90%",
+  maxWidth: "900px",
+  margin: "20px auto",
+  backgroundColor: "rgba(255, 235, 215, 0.9)", // fondo más opaco
+  borderRadius: "15px",
+  boxShadow: "0 4px 12px rgba(0,0,0,0.1)"
+};
 
-body {
-  background: #fff3e0;
-  font-family: 'Segoe UI', sans-serif;
-}
+const titleStyle = { 
+  textAlign: "center", 
+  color: "#FF4500", 
+  marginBottom: "20px",
+  textShadow: "1px 1px 2px #fff"
+};
 
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 15px;
-}
+const gridStyle = { 
+  display: "grid", 
+  gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", 
+  gap: "15px" 
+};
 
-.title {
-  text-align: center;
-  color: #e65100;
-  margin-bottom: 20px;
-}
+const cardStyle = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  backgroundColor: "rgba(255, 250, 240, 0.95)", // más opaco
+  padding: "15px",
+  borderRadius: "10px",
+  boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+  transition: "transform 0.2s",
+  cursor: "pointer",
+  width: "100%",
+};
 
-.section-title {
-  margin: 20px 0 10px;
-  color: #bf360c;
-  text-align: center;
-}
+const imgStyle = { 
+  width: "100px", 
+  height: "100px", 
+  objectFit: "contain", 
+  marginBottom: "8px",
+  borderRadius: "8px",
+  backgroundColor: "rgba(255,255,255,0.6)" // ligero fondo para contraste
+};
 
-/* Grid adaptable */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
-}
+const infoStyle = { 
+  textAlign: "center", 
+  marginBottom: "5px",
+  color: "#333" 
+};
 
-/* Cards */
-.card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  transition: transform .2s;
-}
+const labelStyle = { 
+  fontWeight: "bold", 
+  fontSize: "16px", 
+  marginBottom: "3px", 
+  color: "#D35400" 
+};
 
-.card:hover {
-  transform: scale(1.03);
-}
+const counterStyle = { 
+  display: "flex", 
+  alignItems: "center", 
+  gap: "8px",
+  color: "#222"
+};
 
-.card img {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-}
+const inputStyle = { 
+  padding: "6px", 
+  margin: "5px 0", 
+  borderRadius: "5px", 
+  border: "1px solid #ccc",
+  backgroundColor: "rgba(255,255,255,0.9)"
+};
 
-.card h3 {
-  color: #d84315;
-  margin: 10px 0;
-}
+const formStyle = { marginBottom: "20px" };
 
-.promo {
-  background: #ffe0b2;
-}
+const cartStyle = { 
+  backgroundColor: "rgba(255, 228, 196, 0.9)", // más opaco
+  padding: "12px", 
+  borderRadius: "10px", 
+  marginBottom: "20px",
+  color: "#222"
+};
 
-/* Contador */
-.counter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  margin-top: 10px;
-}
+const cartItemStyle = { 
+  display: "flex", 
+  justifyContent: "space-between", 
+  marginBottom: "5px" 
+};
 
-.counter button {
-  background: #ff6f00;
-  border: none;
-  color: white;
-  font-size: 20px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-}
+const totalCartStyle = { 
+  fontWeight: "bold", 
+  textAlign: "right", 
+  marginTop: "10px", 
+  fontSize: "16px", 
+  color: "#111"
+};
 
-.counter span {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-/* Form */
-.form {
-  margin: 25px 0;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.form label {
-  display: flex;
-  flex-direction: column;
-  font-weight: bold;
-}
-
-.form input {
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-/* Carrito */
-.cart {
-  background: #fff8e1;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 5px;
-}
-
-.total {
-  text-align: right;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-/* WhatsApp */
-.whatsapp {
-  width: 100%;
-  padding: 15px;
-  background: #25d366;
-  color: white;
-  font-size: 18px;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-}
+const whatsappStyle = {
+  width: "100%",
+  padding: "15px",
+  fontSize: "18px",
+  backgroundColor: "#FF4500",
+  color: "#fff",
+  border: "none",
+  borderRadius: "10px",
+  cursor: "pointer",
+  fontWeight: "bold",
+  transition: "transform 0.2s, background-color 0.2s",
+};
