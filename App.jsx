@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import './App.css';
+import classicImg from './assets/classic.png';
+import cheeseImg from './assets/Especial.png';
 
 function App() {
   const [order, setOrder] = useState({
@@ -18,10 +20,11 @@ function App() {
   const price2 = 6000;
   const promoPrice = 20000;
 
-  const hamburguesas = [
-    { type: "classic", label: "Classic", img: "https://bk-latam-prod.s3.amazonaws.com/sites/burgerking.com.py/files/hamburguesa.png", price },
-    { type: "cheese", label: "Especial", img: "https://w7.pngwing.com/pngs/772/330/png-transparent-hamburger-buffalo-wing-cheeseburger-french-fries-hot-dog-buffalo-wings-food-cheese-cheeseburger.png", price: price2 },
-  ];
+ const hamburguesas = [
+  { type: "classic", label: "Classic", img: classicImg, price },
+  { type: "cheese", label: "Especial", img: cheeseImg, price: price2 },
+];
+
 
   const promos = [
     { type: "promoClassic", label: "Classic x4", price: promoPrice },
