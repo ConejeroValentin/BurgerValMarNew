@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
-import classicImg from "./assets/classic.png";
-import cheeseImg from "./assets/Especial.png";
-import brutalImg from "./assets/brutal.png";
-
 function App() {
   const [order, setOrder] = useState({
     classic: 0,
@@ -32,19 +28,19 @@ function App() {
     {
       type: "classic",
       label: "Classic",
-      img: classicImg,
+      img: "/classic.png",
       price: priceClassic,
     },
     {
       type: "cheese",
       label: "Especial",
-      img: cheeseImg,
+      img: "/especial.png",
       price: priceCheese,
     },
     {
       type: "brutal",
       label: "BRUTAL 🍔",
-      img: brutalImg,
+      img: "/brutal.png",
       price: priceBrutal,
       desc: "3 medallones, 3 quesos, tomate y huevo",
     },
@@ -111,18 +107,19 @@ function App() {
       <div className="grid">
         {hamburguesas.map((h) => (
           <div key={h.type} className="card">
-            <img src={h.img} alt={h.label} className="img" />
+            <img
+              src={h.img}
+              alt={h.label}
+              className="img"
+              onError={(e) => (e.target.style.display = "none")}
+            />
             <div className="label">{h.label}</div>
             {h.desc && <small>{h.desc}</small>}
             <div>{h.price}$ c/u</div>
 
             <div className="counter">
-              <button className="btn" onClick={() => addItem(h.type)}>
-                ➕
-              </button>
-              <button className="btn" onClick={() => removeItem(h.type)}>
-                ➖
-              </button>
+              <button className="btn" onClick={() => addItem(h.type)}>➕</button>
+              <button className="btn" onClick={() => removeItem(h.type)}>➖</button>
               <div>{order[h.type]}</div>
             </div>
           </div>
@@ -133,12 +130,8 @@ function App() {
             <div className="label">{p.label}</div>
             <div>{p.price}$</div>
             <div className="counter">
-              <button className="btn" onClick={() => addItem(p.type)}>
-                ➕
-              </button>
-              <button className="btn" onClick={() => removeItem(p.type)}>
-                ➖
-              </button>
+              <button className="btn" onClick={() => addItem(p.type)}>➕</button>
+              <button className="btn" onClick={() => removeItem(p.type)}>➖</button>
               <div>{order[p.type]}</div>
             </div>
           </div>
@@ -148,20 +141,12 @@ function App() {
       <div className="datetime">
         <label>
           Fecha:
-          <input
-            type="date"
-            value={fecha}
-            onChange={(e) => setFecha(e.target.value)}
-          />
+          <input type="date" value={fecha} onChange={(e) => setFecha(e.target.value)} />
         </label>
 
         <label>
           Hora:
-          <input
-            type="time"
-            value={hora}
-            onChange={(e) => setHora(e.target.value)}
-          />
+          <input type="time" value={hora} onChange={(e) => setHora(e.target.value)} />
         </label>
       </div>
 
@@ -187,10 +172,8 @@ function App() {
         📲 Enviar a WhatsApp
       </button>
 
-      {/* RESEÑAS */}
       <div className="reviews">
         <h2>📸 Comentarios de clientes</h2>
-        <p>Subí fotos de reseñas de nuestras hamburguesas</p>
         <input type="file" accept="image/*" multiple />
       </div>
     </div>
@@ -198,4 +181,3 @@ function App() {
 }
 
 export default App;
-
